@@ -1,0 +1,43 @@
+{
+	"name": "Desktop Notifications",
+	"version": "0.0.0",
+	"author": [
+		"Your Name"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:BoilerPlate",
+	"descriptionmsg": "boilerplate-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"MessagesDirs": {
+		"BoilerPlate": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"socket.io": {
+			"scripts": "modules/socket.io.min.js"
+		},
+		"ext.desktopnotification.load": {
+			"scripts": [
+				"modules/ext.desktopNotification.js"
+			],
+			"dependencies": [
+				"socket.io"
+			]
+		},
+		"jquery.min.js": {
+			"scripts": ["modules/jquery.min.js"]
+		}
+	},
+	"AutoloadClasses": {
+		"DesktopNotificationHooks": "DesktopNotificationHooks.php"
+	},
+	"ExtensionFunctions": [
+		"DesktopNotificationHooks::extensionFunction"
+	],
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "BoilerPlate"
+	},
+	"manifest_version": 1
+}
